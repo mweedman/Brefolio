@@ -1,0 +1,82 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+Header {
+  min-width: 100%;
+}
+
+.graphicsViewport {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  min-height: 90vh;
+  overflow: scroll;
+}
+
+.graphicsViewport ul {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: column wrap;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-inline-start: 0;
+}
+
+.graphicsViewport li {
+  margin: 0;
+  padding: 0;
+}
+
+.graphicsContainer {
+  width: 100vw;
+  min-height: 400px;
+  padding-top: 100%;
+}
+
+
+@media only screen and (min-width: 600px) {
+
+  .graphicsContainer {
+    width: 50%;
+  }
+
+  .graphicsViewport ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .graphicsContainer {
+    width: 33.333%;
+  }
+}
+
+@media only screen and (min-width: 1800px) {
+  .graphicsContainer {
+    width: 25%;
+  }
+}
