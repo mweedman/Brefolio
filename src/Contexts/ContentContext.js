@@ -2,10 +2,15 @@ import React from 'react';
 import Images from '../Components/Images/Images'
 
 const ContentContext = React.createContext({
-  show: true,
+  show: false,
   imageData: [],
+  imageSrc: '',
+  imageDesc: '',
+  imageAlt: '',
+  imageTitle: '',
   closeModal: () => {},
-  openAboutMe: () => {}
+  openAboutMe: () => {},
+  openImage: () => {}
 })
 
 export default ContentContext
@@ -15,10 +20,15 @@ export class ContentProvider extends React.Component {
     super(props)
     
     this.state ={
-      show: true,
+      show: false,
       imageData: Images,
+      imageSrc: '',
+      imageDesc: '',
+      imageAlt: '',
+      imageTitle: '',
       closeModal: () => {},
-      openAboutMe: () => {}
+      openModal: () => {},
+      openImage: () => {}
     }
   }
 
@@ -28,8 +38,25 @@ export class ContentProvider extends React.Component {
     }
   }
 
-  openAboutMe = () => {
-    this.setState({ show: true })
+  openModal = () => {
+    this.setState({ 
+      show: true,
+      imageData: this.state.imageData,
+      imageSrc: this.state.imageSrc,
+      imageDesc: this.state.imageDesc,
+      imageAlt: this.state.imageAlt,
+      imageTitle: this.state.imageTitle 
+    })
+  }
+
+  openImage = async (src,desc,alt,title) => {
+    console.log('Image import data: ', src, desc, alt, title);
+    await this.setState({
+      imageSrc: src,
+      imageDesc: desc,
+      imageAlt: alt,
+      imageTitle: title
+    });
   }
 
   render(){
@@ -37,8 +64,13 @@ export class ContentProvider extends React.Component {
     const content = {
       show: this.state.show,
       imageData: this.state.imageData,
+      imageSrc: this.state.imageSrc,
+      imageDesc: this.state.imageDesc,
+      imageAlt: this.state.imageAlt,
+      imageTitle: this.state.imageTitle,
       closeModal: this.closeModal,
-      openAboutMe: this.openAboutMe
+      openModal: this.openModal,
+      openImage: this.openImage
     }
 
     return(

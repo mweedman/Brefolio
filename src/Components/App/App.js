@@ -22,11 +22,10 @@ class App extends React.Component {
   }
 
   render(){
-    console.log(this.context);
     return (
-      <div className="App" onClick={this.closeModal}>
+      <div className="App">
         {this.context.show && <Modal />}
-        <div>
+        <div className="content" onClick={this.closeModal}>
           <Header />
           <Switch>
             <Route exact path={'/'} component={LandingView} />

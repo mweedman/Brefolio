@@ -16,7 +16,7 @@ class Header extends React.Component {
   static contextType = ContentContext; 
 
   openAboutMe = () => {
-    this.context.openAboutMe();
+    this.context.openModal();
   }
 
   render(){

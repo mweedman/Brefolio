@@ -19,7 +19,7 @@ class Graphics extends React.Component {
           {this.state.images.map((image, index) => {
             return(
               <li key={index} className="graphicsContainer">
-                <Graphic id={image.id} image={image.src} title={image.title} description={image.description}/>
+                <Graphic id={image.id} image={image.src} title={image.title} description={image.description} alt={image.alt}/>
               </li>
             )
           })}
